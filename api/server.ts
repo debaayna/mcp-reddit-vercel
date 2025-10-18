@@ -91,9 +91,6 @@ app.post('/api/mcp', async (req, res) => {
     }
 });
 
-const port = parseInt(process.env.PORT || '3000');
-app.listen(port, () => {
-    console.log(`Reddit MCP Server running on http://localhost:${port}/api/mcp`);
-});
-
+// Do not call app.listen here!
+// For Vercel, just export the app as default:
 export default app;
