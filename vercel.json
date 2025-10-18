@@ -1,8 +1,15 @@
 {
-  "rewrites": [{ "source": "/(.+)", "destination": "/api/server" }],
-  "functions": {
-    "api/server.ts": {
-      "maxDuration": 60
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/server.ts",
+      "use": "@vercel/node"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/api/mcp",
+      "dest": "/api/server.ts"
+    }
+  ]
 }
