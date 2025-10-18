@@ -54,7 +54,7 @@ server.tool(
             return {
                 content: [{
                     type: 'text',
-                    text: `❌ Error posting to Reddit: ${error.message}`
+                    text: `❌ Error posting to Reddit: ${error instanceof Error ? error.message : String(error)}`
                 }],
                 isError: true
             };
